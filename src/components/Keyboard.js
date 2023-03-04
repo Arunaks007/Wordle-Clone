@@ -1,4 +1,8 @@
 export default function Keyboard(props) {
+  const row1 = ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"];
+  const row2 = ["A", "S", "D", "F", "G", "H", "J", "K", "L"];
+  const row3 = ["ENTER", "Z", "X", "C", "V", "B", "N", "M", "DELETE"];
+
   const buttonClicked = (event) => {
     let keyValue = event.target.innerText;
     switch (keyValue.toLowerCase()) {
@@ -17,94 +21,31 @@ export default function Keyboard(props) {
   return (
     <div className="parent-container">
       <div className="button-rows">
-        <button type="button" onClick={buttonClicked}>
-          Q
-        </button>
-        <button type="button" onClick={buttonClicked}>
-          W
-        </button>
-        <button type="button" onClick={buttonClicked}>
-          E
-        </button>
-        <button type="button" onClick={buttonClicked}>
-          R
-        </button>
-        <button type="button" onClick={buttonClicked}>
-          T
-        </button>
-        <button type="button" onClick={buttonClicked}>
-          Y
-        </button>
-        <button type="button" onClick={buttonClicked}>
-          U
-        </button>
-        <button type="button" onClick={buttonClicked}>
-          I
-        </button>
-        <button type="button" onClick={buttonClicked}>
-          O
-        </button>
-        <button type="button" onClick={buttonClicked}>
-          P
-        </button>
+        {row1.map((val) => {
+          return (
+            <button type="button" id={val} onClick={buttonClicked}>
+              {val}
+            </button>
+          );
+        })}
       </div>
       <div className="button-rows">
-        <button type="button" onClick={buttonClicked}>
-          A
-        </button>
-        <button type="button" onClick={buttonClicked}>
-          S
-        </button>
-        <button type="button" onClick={buttonClicked}>
-          D
-        </button>
-        <button type="button" onClick={buttonClicked}>
-          F
-        </button>
-        <button type="button" onClick={buttonClicked}>
-          G
-        </button>
-        <button type="button" onClick={buttonClicked}>
-          H
-        </button>
-        <button type="button" onClick={buttonClicked}>
-          J
-        </button>
-        <button type="button" onClick={buttonClicked}>
-          K
-        </button>
-        <button type="button" onClick={buttonClicked}>
-          L
-        </button>
+        {row2.map((val) => {
+          return (
+            <button type="button" id={val} onClick={buttonClicked}>
+              {val}
+            </button>
+          );
+        })}
       </div>
-      <div className="button-rows" id="row3">
-        <button type="button" onClick={buttonClicked}>
-          ENTER
-        </button>
-        <button type="button" onClick={buttonClicked}>
-          Z
-        </button>
-        <button type="button" onClick={buttonClicked}>
-          X
-        </button>
-        <button type="button" onClick={buttonClicked}>
-          C
-        </button>
-        <button type="button" onClick={buttonClicked}>
-          V
-        </button>
-        <button type="button" onClick={buttonClicked}>
-          B
-        </button>
-        <button type="button" onClick={buttonClicked}>
-          N
-        </button>
-        <button type="button" onClick={buttonClicked}>
-          M
-        </button>
-        <button type="button" onClick={buttonClicked}>
-          DELETE
-        </button>
+      <div className="button-rows">
+        {row3.map((val) => {
+          return (
+            <button type="button" id={val} onClick={buttonClicked}>
+              {val}
+            </button>
+          );
+        })}
       </div>
     </div>
   );
