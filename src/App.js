@@ -2,7 +2,7 @@ import { useState, useRef } from "react";
 import "./App.css";
 import WorldeGrid from "./components/WordleGrid";
 
-const CORRECT_ANS = "break";
+const CORRECT_ANS = "cooks";
 const REGEX_ALPHABETS = /^[A-Za-z]+$/;
 
 function App() {
@@ -38,6 +38,8 @@ function App() {
         case "200":
           winner.current = true;
           break;
+        default:
+          console.log("Nothing matches");
       }
     } else if (event.key === "Backspace" && !winner.current) {
       let finalVal = null;
@@ -81,11 +83,11 @@ function App() {
   function checkAnswer(actual) {
     try {
       for (let i = 0; i < actual.length; i++) {
-        if (actual[i] === CORRECT_ANS[i]) results.current[actual[i]] = true;
-        else if (CORRECT_ANS.includes(actual[i]))
-          results.current[actual[i]] = false;
-        else results.current[actual[i]] = "";
+        if (actual[i] === CORRECT_ANS[i]) results.current[i] = true;
+        else if (CORRECT_ANS.includes(actual[i])) results.current[i] = false;
+        else results.current[i] = "";
       }
+
       changeColors();
       return actual === CORRECT_ANS;
     } catch (error) {
@@ -97,8 +99,11 @@ function App() {
     const row = document
       .getElementById("row".concat(index.current + 1).toString())
       .querySelectorAll("div");
+
+    console.log(row[0].getAttribute("id"));
+
     for (let i = 0; i < row.length; i++) {
-      let resultBoolean = results.current[row[i].innerText.toLowerCase()];
+      let resultBoolean = results.current[row[i].getAttribute("id") - 1];
       if (resultBoolean === true) {
         row[i].style.backgroundColor = "green";
       } else if (resultBoolean === false) {

@@ -8,6 +8,8 @@ export default function Keyboard(props) {
       case "enter":
         keyValue = "Enter";
         break;
+      default:
+        break;
     }
     props.handleKeyDown({ key: keyValue });
   };
