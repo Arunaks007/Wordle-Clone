@@ -1,38 +1,67 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-color: black;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.nav-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  border-bottom: 1px solid grey;
+  padding: 10px;
+  font-size: 35px;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.outer-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.grid-wordle {
+  display: grid;
+  grid-gap: 5px;
+  padding: 10px;
+}
+
+.grid-wordle .rows {
+  display: grid;
+  grid-template-columns: repeat(5, 0fr);
+  grid-gap: 5px;
+  font-size: 35px;
+  text-align: center;
+}
+
+.grid-wordle .rows div {
+  border: 1px solid grey;
+  width: 60px;
+  height: 58px;
+}
+
+.parent-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.parent-container .button-rows button {
+  border-radius: 6px;
+  width: 62px;
+  height: 65px;
+  background-color: grey;
+  padding: 0;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.parent-container .button-rows {
+  display: flex;
+  justify-content: center;
 }
