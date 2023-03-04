@@ -118,10 +118,17 @@ function App() {
 
     for (let i = 0; i < row.length; i++) {
       let resultBoolean = results.current[row[i].getAttribute("id") - 1];
+      let keyValue = document.getElementById(row[i].innerText);
+
       if (resultBoolean === true) {
         row[i].style.backgroundColor = "green";
+        keyValue.style.backgroundColor = "green";
       } else if (resultBoolean === false) {
         row[i].style.backgroundColor = "orange";
+        keyValue.style.backgroundColor = "orange";
+      } else {
+        row[i].style.backgroundColor = "grey";
+        keyValue.style.backgroundColor = "grey";
       }
     }
   };
