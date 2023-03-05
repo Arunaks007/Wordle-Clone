@@ -38,7 +38,7 @@ export default function Keyboard(props) {
           );
         })}
       </div>
-      <div className="button-rows">
+      <div className="button-rows three">
         {row3.map((val) => {
           return (
             <button type="button" id={val} onClick={buttonClicked}>

@@ -65,11 +65,17 @@
   .parent-container .button-rows button {
     width: 33px;
     height: 50px;
+    font-size: 14px;
   }
   .grid-wordle .rows div {
     width: 60px;
     height: 60px;
     line-height: 55px;
+  }
+
+  #ENTER,
+  #DELETE {
+    width: 60px;
   }
 }
 
