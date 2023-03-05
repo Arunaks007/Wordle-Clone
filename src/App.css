@@ -21,6 +21,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  max-width: 100%;
 }
 
 .grid-wordle {
@@ -34,22 +35,16 @@
   grid-template-columns: repeat(5, 0fr);
   grid-gap: 5px;
   font-size: 35px;
-  text-align: center;
 }
 
 .grid-wordle .rows div {
   border: 1px solid grey;
   width: 60px;
   height: 58px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 65px;
 }
-
-.parent-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
 .parent-container .button-rows button {
   border-radius: 6px;
   width: 62px;
@@ -66,13 +61,35 @@
   justify-content: center;
 }
 
-@media only screen and (max-width: 620px) {
+@media only screen and (max-width: 600px) {
   .parent-container .button-rows button {
-    width: 40px;
+    width: 33px;
     height: 50px;
   }
   .grid-wordle .rows div {
     width: 60px;
     height: 60px;
+    line-height: 55px;
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+  .grid-wordle .rows div {
+    width: 80px;
+    height: 80px;
+    line-height: 70px;
+    font-size: 50px;
+  }
+
+  .outer-grid {
+    margin-top: 2%;
+  }
+  .parent-container .button-rows button {
+    width: 80px;
+    height: 80px;
+  }
+
+  .parent-container {
+    margin-top: 1%;
   }
 }

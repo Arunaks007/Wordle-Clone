@@ -2,7 +2,7 @@ import { useState, useRef } from "react";
 import "./App.css";
 import WorldeGrid from "./components/WordleGrid";
 
-const CORRECT_ANS = "cooks";
+const CORRECT_ANS = "train";
 const REGEX_ALPHABETS = /^[A-Za-z]+$/;
 
 function App() {
@@ -136,7 +136,9 @@ function App() {
   return (
     <div className="App">
       <div className="nav-bar">
-        <nav>Wordle</nav>
+        <nav>
+          <span onClick={() => window.location.reload()}>Wordle</span>
+        </nav>
       </div>
       <WorldeGrid val={val} handleKeyDown={handleKeyDown} />
     </div>

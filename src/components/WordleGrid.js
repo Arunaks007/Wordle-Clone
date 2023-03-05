@@ -56,8 +56,8 @@ export default function WorldeGrid(props) {
             <div id="5">{props.val[5][4]}</div>
           </div>
         </div>
+        <Keyboard handleKeyDown={props.handleKeyDown} />
       </div>
-      <Keyboard handleKeyDown={props.handleKeyDown} />
     </>
   );
 }
