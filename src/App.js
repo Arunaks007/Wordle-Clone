@@ -135,9 +135,23 @@ function App() {
 
   return (
     <div className="App">
+      <div
+        class="ribbon-1 left"
+        style={{ cursor: "pointer" }}
+        onClick={() => {
+          window.location.href = "https://github.com/Arunaks007/Wordle-Clone";
+        }}
+      >
+        GitHub AK
+      </div>
       <div className="nav-bar">
         <nav>
-          <span onClick={() => window.location.reload()}>Wordle</span>
+          <span
+            style={{ cursor: "pointer" }}
+            onClick={() => window.location.reload()}
+          >
+            Wordle
+          </span>
         </nav>
       </div>
       <WorldeGrid val={val} handleKeyDown={handleKeyDown} />

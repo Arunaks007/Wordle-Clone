@@ -3,6 +3,20 @@
   color: white;
 }
 
+.ribbon-1 {
+  position: fixed;
+  background: wheat;
+  box-shadow: 0 0 0 999px wheat;
+  clip-path: inset(0 -100%);
+  color: black;
+}
+
+.left {
+  inset: 0 auto auto 0;
+  transform-origin: 100% 0;
+  transform: translate(-29.3%) rotate(-45deg);
+}
+
 .nav-bar {
   display: flex;
   flex-direction: row;
