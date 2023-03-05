@@ -65,3 +65,14 @@
   display: flex;
   justify-content: center;
 }
+
+@media only screen and (max-width: 620px) {
+  .parent-container .button-rows button {
+    width: 40px;
+    height: 50px;
+  }
+  .grid-wordle .rows div {
+    width: 60px;
+    height: 60px;
+  }
+}
