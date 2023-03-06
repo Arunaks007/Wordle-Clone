@@ -7,7 +7,7 @@ export default function WorldeGrid(props) {
     return () => {
       document.removeEventListener("keydown", props.handleKeyDown);
     };
-  }, []);
+  });
 
   return (
     <>
